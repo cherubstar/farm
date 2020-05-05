@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+          
+<hibernate-configuration>
+	<!-- 通常，一个session-factory节点代表一个数据库 -->
+	<session-factory>
+
+		<!-- 第一部分:数据库连接配置 -->
+
+		<!-- 加载驱动，连接SQL server -->
+		<property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+		
+		<!-- 数据库用户名-->
+		<property name="connection.username">itgzs</property>
+
+		<!-- 数据库密码-->
+		<property name="connection.password">123456</property>
+		
+		<!-- 数据库地址，JDBC URL -->		<!-- ;useUnicode=true;characterEncoding=UTF-8 -->
+		<property name="connection.url">jdbc:jtds:sqlserver://192.168.0.43:1433;DatabaseName=ODBCSQL</property>
+		
+		<!-- 第二部分:数据库其他配置 -->
+		
+		<!-- hibernate.show_sql显示 hibernate 运行时候执行的SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- 格式化SQL -->
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- 加载数据库方言(因为不同数据库有不同的SQL语句 操作，hibernate 需要通过不同数据库的方言来识别) -->
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		
+		<!-- 第三部分:加载所有的映射（*.hbm.xml） -->
+		<mapping class="com.roper.entity.HomeEntity" />
+		<mapping class="com.roper.entity.GardenEntity" />
+		<mapping class="com.roper.entity.LightEntity" />
+		<mapping class="com.roper.entity.LightOtherEntity" />
+		<mapping class="com.roper.entity.RuralEntity" />
+		<mapping class="com.roper.entity.EquipmentEntity" />
+		<mapping class="com.roper.entity.AnimalHusbandryEntity" />
+		<mapping class="com.roper.entity.LeagueGreenhousesEntity" />
+		<mapping class="com.roper.entity.LeagueGreenhousesOtherEntity" />
+		<mapping class="com.roper.entity.SpringGreenhousesEntity" />
+		<mapping class="com.roper.entity.SpringGreenhousesInfoEntity" />
+
+		<mapping class="com.roper.entity.Regist" />
+		<mapping class="com.roper.entity.User" />
+		<mapping class="com.roper.entity.Permission" />
+		<mapping class="com.roper.entity.Role" />
+		<mapping class="com.roper.entity.UserRole" />
+		<mapping class="com.roper.entity.LocationEntity" />
+	</session-factory>
+</hibernate-configuration>
